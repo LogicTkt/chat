@@ -7,7 +7,7 @@ $ ->
       # Called when the subscription has been terminated by the server
 
     received: (data) ->
-      $('#messages').append data['message']
+      vm.room.appendMessage(data['message']['id'], data['message']['content'])
 
     speak: (room, message) ->
       @perform 'speak', room: room, message: message

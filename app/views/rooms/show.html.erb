@@ -1,7 +1,9 @@
 <h1>Chat room<span id='room'><%= @room.id %></span></h1>
 
-<div id="messages">
-  <%= render @messages %>
+<div id="messages"  data-bind='with: room'>
+  <ul data-bind='foreach: messages'>
+    <li data-bind='text: content'></li>
+  </ul>
 </div>
 
 <form>
